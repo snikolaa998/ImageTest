@@ -17,8 +17,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 90, height: 90)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        let cellSize = self.view.bounds.size.width / 4.45
+        layout.itemSize = CGSize(width: cellSize, height: 90)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView?.register(CircleCollectionViewCell.self, forCellWithReuseIdentifier: CircleCollectionViewCell.identefier)
         collectionView?.showsHorizontalScrollIndicator = false
