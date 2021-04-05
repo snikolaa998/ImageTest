@@ -22,7 +22,7 @@ class CircleCollectionViewCell: UICollectionViewCell {
         self.clipsToBounds = true
         self.contentMode = .scaleAspectFill
         self.layer.masksToBounds = true
-        self.layer.cornerRadius = self.frame.size.width / 2
+        self.layer.cornerRadius = self.frame.size.height / 2
         self.layer.borderWidth = 1.0
         self.backgroundColor = .blue
         myImageView.frame = contentView.bounds
