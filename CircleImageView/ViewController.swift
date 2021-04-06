@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     private var collectionView: UICollectionView!
+    private var button: UIButton!
     var imageArray: [UIImage] = []
     @IBOutlet weak var buttonUI: UIButton!
     
@@ -19,9 +20,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let layerColor = CAGradientLayer()
         let colorTop = UIColor(red: 122.0 / 255.0, green: 115.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0).cgColor
         let colorBottom = UIColor(red: 179.0 / 255.0, green: 100.0 / 255.0, blue: 232.0 / 255.0, alpha: 1.0).cgColor
-        layerColor.startPoint = CGPoint(x: 0.5, y: 1.0)
-        layerColor.endPoint = CGPoint(x: 0.5, y: 0.0)
-        layerColor.colors = [colorTop, colorBottom]
+        layerColor.startPoint = CGPoint(x: 0.0, y: 0.5)
+        layerColor.endPoint = CGPoint(x: 1.0, y: 0.6)
+        layerColor.colors = [colorBottom, colorTop]
         layerColor.locations = [0.0, 1.0]
         layerColor.frame = buttonUI.bounds
         buttonUI.layer.cornerRadius = 10
@@ -40,17 +41,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView?.showsHorizontalScrollIndicator = false
         collectionView?.delegate = self
         collectionView?.dataSource = self
-        collectionView?.backgroundColor = .white
+        collectionView?.backgroundColor = UIColor(named: "color")
         guard let myCollection = collectionView else {
             return
         }
         view.addSubview(myCollection)
-        
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionView?.frame = CGRect(x: 0, y: 100, width: view.frame.size.width, height: self.view.frame.size.height * 0.10).integral
+        collectionView?.frame = CGRect(x: 0, y: 150, width: view.frame.size.width, height: self.view.frame.size.height * 0.10).integral
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -19,12 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhh-gc-SDl">
-                                <rect key="frame" x="20" y="807" width="374" height="55"/>
+                                <rect key="frame" x="20" y="64" width="374" height="55"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="55" id="BiB-g8-1pn"/>
-                                    <constraint firstAttribute="height" constant="55" id="UoV-mQ-k36"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="Zno-Dp-DMC"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="Sc9-VD-29y"/>
+                                    <constraint firstAttribute="height" constant="55" id="veh-ei-seF"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Gallery">
@@ -39,9 +38,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Color"/>
                         <constraints>
-                            <constraint firstItem="fhh-gc-SDl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7Pp-Ph-WhD"/>
-                            <constraint firstItem="fhh-gc-SDl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bzz-0l-GgV"/>
-                            <constraint firstAttribute="trailing" secondItem="fhh-gc-SDl" secondAttribute="trailing" constant="20" id="ok7-Qk-cmO"/>
+                            <constraint firstItem="fhh-gc-SDl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="MvL-fg-FOu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fhh-gc-SDl" secondAttribute="trailing" constant="20" id="YT1-0V-b6O"/>
+                            <constraint firstItem="fhh-gc-SDl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kXD-85-ea6"/>
                         </constraints>
                     </view>
                     <connections>
@@ -50,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141" y="107"/>
+            <point key="canvasLocation" x="-216" y="-744"/>
         </scene>
     </scenes>
     <resources>

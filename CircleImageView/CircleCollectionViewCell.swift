@@ -1,7 +1,18 @@
 import UIKit
 
 class CircleCollectionViewCell: UICollectionViewCell {
+    
     static let identefier = "CircleCollectionViewCell"
+    private let myButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("x", for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 12
+        button.layer.masksToBounds = false
+        button.frame = CGRect(x: 0, y: 0, width: 26, height: 26).integral
+        button.setTitleColor(.red, for: .normal)
+        return button
+    }()
     private let myImageView: UIImageView = {
         let imageView = UIImageView()
         
@@ -11,6 +22,7 @@ class CircleCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(myImageView)
+        contentView.insertSubview(myButton, belowSubview: myImageView)
     }
     
     required init?(coder: NSCoder) {
@@ -19,13 +31,20 @@ class CircleCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.clipsToBounds = true
-        self.contentMode = .scaleAspectFill
+        
         self.layer.masksToBounds = true
-        self.layer.cornerRadius = self.frame.size.height / 2
-        self.layer.borderWidth = 1.0
-        self.backgroundColor = .blue
+        self.myImageView.layer.cornerRadius = self.frame.size.height / 2
+        myImageView.layer.borderWidth = 1.0
+        myImageView.layer.borderColor = UIColor.white.cgColor
+        myImageView.layer.shadowColor = UIColor.black.cgColor
+        myImageView.layer.shadowOffset = CGSize(width: 3, height: 3)
+        myImageView.layer.shadowOpacity = 0.7
+        myImageView.layer.shadowRadius = 4.0
+        myImageView.contentMode = .scaleAspectFill
+        myImageView.layer.masksToBounds = true
+        myImageView.clipsToBounds = true
         myImageView.frame = contentView.bounds
+//        myImageView.addSubview(myButton)
     }
     
     public func configure(with image: UIImage) {
