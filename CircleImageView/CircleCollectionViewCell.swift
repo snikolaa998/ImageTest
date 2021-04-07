@@ -18,7 +18,7 @@ class CircleCollectionViewCell: UICollectionViewCell {
         deleteButton.setTitle("x", for: .normal)
         deleteButton.titleLabel?.textAlignment = .center
         deleteButton.backgroundColor = .white
-        deleteButton.layer.cornerRadius = 12
+        deleteButton.layer.cornerRadius = 10
         deleteButton.layer.masksToBounds = false
         deleteButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20).integral
         deleteButton.setTitleColor(.red, for: .normal)
