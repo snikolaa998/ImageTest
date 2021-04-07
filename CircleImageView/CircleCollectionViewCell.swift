@@ -28,7 +28,7 @@ class CircleCollectionViewCell: UICollectionViewCell {
     private let myImageView: UIImageView = {
         let myImageView = UIImageView()
         myImageView.clipsToBounds = true
-        myImageView.layer.cornerRadius = 12
+        myImageView.layer.cornerRadius = myImageView.frame.height / 2
 //        myImageView.clipsToBounds = false
 //        myImageView.layer.shadowColor = UIColor.black.cgColor
 //        myImageView.layer.shadowOffset = CGSize.zero
