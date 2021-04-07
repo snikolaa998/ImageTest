@@ -11,9 +11,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        let cellSize = self.view.bounds.size.width * 0.17
+        let cellSize = self.view.bounds.size.width * 0.163
         layout.itemSize = CGSize(width: cellSize, height: cellSize)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView?.register(CircleCollectionViewCell.self, forCellWithReuseIdentifier: CircleCollectionViewCell.identefier)
         collectionView?.showsHorizontalScrollIndicator = false
@@ -33,7 +33,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionView?.frame = CGRect(x: 0, y: 150, width: view.frame.size.width, height: self.view.frame.size.height * 0.10).integral
+        collectionView?.frame = CGRect(x: 15, y: 150, width: view.frame.size.width - 20, height: self.view.frame.size.height * 0.10).integral
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -96,7 +96,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         button.layer.cornerRadius = 10
         layer.startPoint = CGPoint(x: 0.0, y: 0.5)
         layer.endPoint = CGPoint(x: 1.0, y: 0.6)
-        layer.colors = [firstColor, secondColor]
+        layer.colors = [secondColor, firstColor]
         layer.locations = [0.0, 1.0]
         layer.frame = button.bounds
         layer.cornerRadius = button.layer.cornerRadius

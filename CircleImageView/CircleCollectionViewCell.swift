@@ -3,6 +3,16 @@ import UIKit
 class CircleCollectionViewCell: UICollectionViewCell {
     
     static let identefier = "CircleCollectionViewCell"
+    private let uiView: UIView = {
+        let outerView = UIView()
+        outerView.clipsToBounds = false
+        outerView.layer.shadowColor = UIColor.black.cgColor
+        outerView.layer.shadowOpacity = 1
+        outerView.layer.shadowOffset = CGSize.zero
+        outerView.layer.shadowRadius = 10
+        outerView.layer.shadowPath = UIBezierPath(roundedRect: outerView.bounds, cornerRadius: 12).cgPath
+        return outerView
+    }()
     public let deleteButton: UIButton = {
         let deleteButton = UIButton()
         deleteButton.setTitle("x", for: .normal)
@@ -17,16 +27,22 @@ class CircleCollectionViewCell: UICollectionViewCell {
     
     private let myImageView: UIImageView = {
         let myImageView = UIImageView()
-        myImageView.layer.shadowColor = UIColor.black.cgColor
-        myImageView.layer.shadowOffset = CGSize(width: 3, height: 3)
-        myImageView.layer.shadowOpacity = 0.7
-        myImageView.layer.shadowRadius = 4.0
+        myImageView.clipsToBounds = true
+        myImageView.layer.cornerRadius = 12
+//        myImageView.clipsToBounds = false
+//        myImageView.layer.shadowColor = UIColor.black.cgColor
+//        myImageView.layer.shadowOffset = CGSize.zero
+//        myImageView.layer.shadowOpacity = 1
+//        myImageView.layer.shadowRadius = 10
+//        myImageView.layer.shadowPath = UIBezierPath(roundedRect: myImageView.bounds, cornerRadius: 12).cgPath
+////        myImageView.layer.masksToBounds = false
         return myImageView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.addSubview(myImageView)
+        contentView.addSubview(uiView)
+        uiView.addSubview(myImageView)
         contentView.insertSubview(deleteButton, aboveSubview: myImageView)
     }
     
